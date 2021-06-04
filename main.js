@@ -20,11 +20,14 @@ class School {
         } else{this._numberOfStudents = newNumberOfStudents;}
     }
     quickFact(){
+        console.log(`${this._name} educates ${this._numberOfStudents} students at the ${this._level} school level.`)
 
     }
-    pickSubstitudeTeacher(){
-
+    static pickSubstitudeTeacher(substituteTeachers){
+        const randomNumber = Math.floor(Math.random()*(substituteTeachers.length));
+        return substituteTeachers[randomNumber];
     }
+    
 }
 
 // const abbcc = new School('GreatSchool','High',0);
@@ -32,8 +35,8 @@ class School {
 // console.log(abbcc.numberOfStudents);
 
 class Primary extends School {
-    constructor(name,level,numberOfStudents){
-        super(name,level,numberOfStudents,pickupPolicy);
+    constructor(name,level,numberOfStudents,pickupPolicy){
+        super(name,level,numberOfStudents);
         this._pickupPolicy = pickupPolicy;
     }
 
@@ -52,4 +55,12 @@ class High extends School {
     constructor(name,level,numberOfStudents,sportTeams){
         super(name,level,numberOfStudents);
         this._sportTeams = sportTeams;
+    }
 }
+
+// const abbcc = new Primary('San','Primary',65,'Test');
+// // abbcc.numberOfStudents = 51;
+// // console.log(abbcc.numberOfStudents);
+// abbcc.quickFact(); 
+
+console.log(School.pickSubstitudeTeacher(['a','b','c','d','e']))
