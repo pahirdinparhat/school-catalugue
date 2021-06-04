@@ -63,4 +63,4 @@ class High extends School {
 // // console.log(abbcc.numberOfStudents);
 // abbcc.quickFact(); 
 
-console.log(School.pickSubstitudeTeacher(['a','b','c','d','e']))
+//console.log(School.pickSubstitudeTeacher(['a','b','c','d','e']))
